@@ -16,9 +16,7 @@ class Solution {
       }
       letterCount.putIfAbsent(letter, 1);
 
-      if (letterCount.get(letter) > max) {
-        max = letterCount.get(letter);
-      }
+      max = letterCount.get(letter) > max ? max = letterCount.get(letter) : max;
     }
 
     ArrayList<Character> letterTie = new ArrayList<Character>();
@@ -39,7 +37,6 @@ class Solution {
       int currentLetterIndex = s.indexOf(character.toString());
 
       smallestIndex = (currentLetterIndex < smallestIndex) ? smallestIndex = currentLetterIndex : smallestIndex;
-
     }
 
     return s.toCharArray()[smallestIndex];
